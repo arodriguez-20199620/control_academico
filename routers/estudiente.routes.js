@@ -32,8 +32,8 @@ router.put(
         check("id", "El id no es un formato válido de MongoDB").isMongoId(),
         check("id").custom(existeUsuarioById),
         check("cursos").custom(validarNoAsing),
-        check("cursos").custom(validarCursoDuplicado),
         check("cursos").custom(existeCurso),
+        check("cursos").custom(validarCursoDuplicado),
         validarCampos,
     ], asignarCursos);
 

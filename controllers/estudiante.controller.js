@@ -5,20 +5,17 @@ const getEstudiantesCursos = async (req, res) => {
   try {
     const estudianteId = req.usuario._id;
 
-    const estudiante = await Usuario.findById(estudianteId).populate('cursos', 'asignatura');
-
+    const estudiante = await Usuario.findById(estudianteId).populate({
+      path: 'cursos',
+      select: 'asignatura estado',
+      match: { estado: true }
+    });
 
     res.json({ cursos: estudiante.cursos });
   } catch (error) {
     res.status(500).json({ error: 'Error al obtener los cursos del estudiante.' });
   }
 };
-
-
-
-
-
-
 
 const asignarCursos = async (req, res) => {
   const { id } = req.params;

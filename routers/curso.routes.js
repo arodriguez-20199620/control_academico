@@ -4,7 +4,8 @@ const { check } = require('express-validator');
 //Validaciones
 const { validarCampos } = require('../middlewares/validarCampos');
 const { existeCursoById, existeAsignatura } = require('../helpers/validarCursos')
-
+const { validarJWT } = require('../middlewares/validar-jwt');
+const { tieneRole } = require('../middlewares/validar-roles');
 
 // Controlador
 const { cursoGet, cursoPost, cursoPut, cursoDelete, cursoSearch } = require('../controllers/curso.controller');
@@ -24,6 +25,8 @@ router.get(
 router.post(
     "/",
     [
+        validarJWT,
+        tieneRole('TEACHER_ROLE'),
         check("asignatura", "El nombre de la asignatura es obligatorio").not().isEmpty(),
         check("asignatura").custom(existeAsignatura),
         validarCampos,
@@ -32,6 +35,8 @@ router.post(
 router.put(
     "/:id",
     [
+        validarJWT,
+        tieneRole('TEACHER_ROLE'),
         check("id", "El id no es un formato válido de MongoDB").isMongoId(),
         check("id").custom(existeCursoById),
         validarCampos
@@ -39,7 +44,8 @@ router.put(
 
 router.delete(
     "/:id",
-    [
+    [validarJWT,
+        tieneRole('TEACHER_ROLE'),
         check("id", "El id no es un formato válido de MongoDB").isMongoId(),
         check("id").custom(existeCursoById),
         validarCampos

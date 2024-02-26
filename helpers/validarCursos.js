@@ -42,7 +42,11 @@ const existeCurso = async (cursos = []) => {
     for (let i = 0; i < cursos.length; i++) {
         const curso = await Curso.findOne({ asignatura: cursos[i] });
         if (!curso) {
-            throw new Error(`El curso ${cursos[i]} no es valido`);
+
+            throw new Error(`El curso ${cursos[i]} no existe en la base de datos`);
+        }
+        if (!curso.estado) {
+            throw new Error(`El curso ${cursos[i]} no existe en la base de datos`);
         }
     };
 }
