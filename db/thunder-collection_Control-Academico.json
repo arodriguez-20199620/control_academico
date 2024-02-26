@@ -1,0 +1,236 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Control-Academico",
+    "dateExported": "2024-02-26T15:22:53.514Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "58b6319b-7173-4184-be41-52d5884a8bb8",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2024-02-26T15:00:37.546Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "8a03ab35-dde5-4ae9-8095-eb696f516eb7",
+            "name": "Cursos",
+            "containerId": "",
+            "created": "2024-02-26T15:00:48.602Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "3b3d7cac-8549-467d-b98d-86492490b30b",
+            "name": "Estudiantes",
+            "containerId": "",
+            "created": "2024-02-26T15:11:05.093Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "13e8e591-e646-4ea6-9c8e-6f7b35901c33",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "58b6319b-7173-4184-be41-52d5884a8bb8",
+            "name": "Register",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-26T14:53:05.907Z",
+            "modified": "2024-02-26T15:03:34.263Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\": \"test@email.com\",\n  \"password\": \"123456\",\n  \"nombre\": \"test2\",\n  \"role\": \"TEACHER_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8bce2cea-3d48-4cee-8e3b-563c8f7807db",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "58b6319b-7173-4184-be41-52d5884a8bb8",
+            "name": "Login",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-26T14:59:43.937Z",
+            "modified": "2024-02-26T15:20:12.674Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\": \"test@email.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "606d9d2c-90bc-43db-91a9-04ad3a879db9",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "8a03ab35-dde5-4ae9-8095-eb696f516eb7",
+            "name": "CreateCursos",
+            "url": "http://localhost:3000/api/cursos/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-02-26T15:01:05.487Z",
+            "modified": "2024-02-26T15:18:12.522Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRjYTgyMjdjNTc2MWE0NzNhNjM2ZTMiLCJub21icmUiOiJ0ZXN0MiIsImlhdCI6MTcwODk1OTgzNCwiZXhwIjoxNzA4OTYzNDM0fQ.6kpTDsDV2P-iOS74HmXiJjCC3MB9q21T0u4i_dg6rtc"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"asignatura\":\"Etica\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f4c974e4-06dd-45df-beee-73cc6a2b5d81",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "8a03ab35-dde5-4ae9-8095-eb696f516eb7",
+            "name": "ReadCursos",
+            "url": "http://localhost:3000/api/cursos/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-26T15:04:20.698Z",
+            "modified": "2024-02-26T15:08:12.946Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "14c11bc7-c8c1-4750-8869-5e5dcab9d08e",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "8a03ab35-dde5-4ae9-8095-eb696f516eb7",
+            "name": "UpdateCursos",
+            "url": "http://localhost:3000/api/cursos/65dca83e7c5761a473a636e9",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-02-26T15:08:35.781Z",
+            "modified": "2024-02-26T15:10:02.228Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRjYTgyMjdjNTc2MWE0NzNhNjM2ZTMiLCJub21icmUiOiJ0ZXN0MiIsImlhdCI6MTcwODk1OTgzNCwiZXhwIjoxNzA4OTYzNDM0fQ.6kpTDsDV2P-iOS74HmXiJjCC3MB9q21T0u4i_dg6rtc"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"asignatura\":\"Tecnologia\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a9da5663-bef3-41c5-a535-cc9a2f571b60",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "8a03ab35-dde5-4ae9-8095-eb696f516eb7",
+            "name": "DeleteCursos",
+            "url": "http://localhost:3000/api/cursos/65dca83e7c5761a473a636e9",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-02-26T15:10:14.750Z",
+            "modified": "2024-02-26T15:10:31.897Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRjYTgyMjdjNTc2MWE0NzNhNjM2ZTMiLCJub21icmUiOiJ0ZXN0MiIsImlhdCI6MTcwODk1OTgzNCwiZXhwIjoxNzA4OTYzNDM0fQ.6kpTDsDV2P-iOS74HmXiJjCC3MB9q21T0u4i_dg6rtc"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c311b5ab-6986-43f4-b680-80d5123d7b08",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "3b3d7cac-8549-467d-b98d-86492490b30b",
+            "name": "CursosAsignados",
+            "url": "http://localhost:3000/api/estudiantes/",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-02-26T15:11:13.587Z",
+            "modified": "2024-02-26T15:19:02.468Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRjYTc1NTdjNTc2MWE0NzNhNjM2ZGYiLCJub21icmUiOiJ0ZXN0IiwiaWF0IjoxNzA4OTYwNjI1LCJleHAiOjE3MDg5NjQyMjV9.9xq1C8ORVhxuPxhHKWBQSDPVJkPBBdoCzbIIJYNf3Bo"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a0d6be62-7205-40b3-9b2a-72b9fa53fe21",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "3b3d7cac-8549-467d-b98d-86492490b30b",
+            "name": "AsignarCursos",
+            "url": "http://localhost:3000/api/estudiantes/65dca7557c5761a473a636df",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2024-02-26T15:16:48.941Z",
+            "modified": "2024-02-26T15:20:01.959Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRjYTgyMjdjNTc2MWE0NzNhNjM2ZTMiLCJub21icmUiOiJ0ZXN0MiIsImlhdCI6MTcwODk2MDc3MSwiZXhwIjoxNzA4OTY0MzcxfQ.Uq9UALRPIuBDMNdGQuTXsUY6IbAd5WfroeXexrenafw"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"cursos\": [\n    \"Matematica\",\n    \"Lenguaje\",\n    \"Etica\"\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "852bdb5e-4b25-49b8-b0cf-efbc2c7e33a6",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "3b3d7cac-8549-467d-b98d-86492490b30b",
+            "name": "EditarPerfil",
+            "url": "http://localhost:3000/api/estudiantes/editar/65dca7557c5761a473a636df",
+            "method": "PUT",
+            "sortNum": 100000,
+            "created": "2024-02-26T15:20:33.126Z",
+            "modified": "2024-02-26T15:21:32.933Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRjYTc1NTdjNTc2MWE0NzNhNjM2ZGYiLCJub21icmUiOiJ0ZXN0IiwiaWF0IjoxNzA4OTYwODEyLCJleHAiOjE3MDg5NjQ0MTJ9.u3_tTSfdu7TWBoAvqRf5wW5d-5iMtoyFtfmvNBqDE6A"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"nombre\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "30b04049-5c38-416b-a63c-fed823239df0",
+            "colId": "56e9d815-5990-4ce4-a7f6-74102fb74f2e",
+            "containerId": "3b3d7cac-8549-467d-b98d-86492490b30b",
+            "name": "EliminarPerfil",
+            "url": "http://localhost:3000/api/estudiantes/65dca7557c5761a473a636df",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2024-02-26T15:21:44.368Z",
+            "modified": "2024-02-26T15:22:36.421Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRjYTc1NTdjNTc2MWE0NzNhNjM2ZGYiLCJub21icmUiOiJ0ZXN0IiwiaWF0IjoxNzA4OTYwODEyLCJleHAiOjE3MDg5NjQ0MTJ9.u3_tTSfdu7TWBoAvqRf5wW5d-5iMtoyFtfmvNBqDE6A"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
