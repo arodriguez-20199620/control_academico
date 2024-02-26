@@ -4,6 +4,7 @@ const Curso = require('../models/curso');
 
 const cursoPost = async (req, res) => {
     const { asignatura } = req.body;
+    const cursoExistente = await Curso.findOne({ asignatura });
     const curso = new Curso({ asignatura });
     await curso.save();
     res.status(201).json({

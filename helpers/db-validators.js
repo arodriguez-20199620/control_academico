@@ -1,3 +1,4 @@
+
 const Usuario = require('../models/usuario');
 
 const existenteEmail = async (correo = '') => {
@@ -6,14 +7,12 @@ const existenteEmail = async (correo = '') => {
         throw new Error(`El email ${correo} ya fue registrado`);
     }
 }
-
 const existeUsuarioById = async (id = '') => {
-    const existeUsuario = await Usuario.findOne({ id });
-    if (existeUsuario) {
+    const existeUsuario = await Usuario.findById(id);
+    if (!existeUsuario) {
         throw new Error(`El usuario con el ${id} no existe`);
     }
 }
-
 
 
 module.exports = {

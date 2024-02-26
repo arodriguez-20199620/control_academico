@@ -25,13 +25,12 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-    const { correo, password } = req.body;s
+    const { correo, password } = req.body;
 
     try {
         // verificar que el correo exista
         const usuario = await Usuario.findOne({ correo });
 
-        console.log(usuario)
         if (!usuario) {
             return res.status(400).json({
                 msg: 'El correo no está registrado'
@@ -52,7 +51,7 @@ const login = async (req, res) => {
             })
         }
 
-        const token = await generarJWT(usuario.id);
+        const token = await generarJWT(usuario.id, usuario.nombre);
 
         res.status(200).json({
             msg: 'Login ok',

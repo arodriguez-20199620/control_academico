@@ -18,6 +18,7 @@ const UsuarioSchema = new Schema({
         type: String,
         enum: ['TEACHER_ROLE', 'STUDENT_ROLE'],
         required: true,
+        default: 'STUDENT_ROLE'
     },
     cursos: [
         {

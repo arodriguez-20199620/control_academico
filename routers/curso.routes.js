@@ -5,6 +5,7 @@ const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares/validarCampos');
 const { existeCursoById, existeAsignatura } = require('../helpers/validarCursos')
 
+
 // Controlador
 const { cursoGet, cursoPost, cursoPut, cursoDelete, cursoSearch } = require('../controllers/curso.controller');
 
@@ -25,7 +26,6 @@ router.post(
     [
         check("asignatura", "El nombre de la asignatura es obligatorio").not().isEmpty(),
         check("asignatura").custom(existeAsignatura),
-
         validarCampos,
     ], cursoPost);
 

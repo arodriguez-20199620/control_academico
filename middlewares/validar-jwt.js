@@ -2,15 +2,15 @@ const jwt = require("jsonwebtoken");
 const Usuario = require("../models/usuario");
 
 const validarJWT = async (req, res, next) => {
-  const token = req.header("x-token");
-
-  if (!token) {
-    return res.status(401).json({
-      msg: "No hay token en la petición",
-    });
-  }
 
   try {
+    const token = req.header("x-token");
+
+    if (!token) {
+      return res.status(401).json({
+        msg: "No hay token en la petición",
+      });
+    }
     //verificación de token
     const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
     //leer el usuario que corresponde al uid
